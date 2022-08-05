@@ -54,7 +54,7 @@ body {
 }
 
 h1 {
-    font-size: 300px;
+    font-size: 270px;
     font-weight: 400;
     color: var(--txt-verylight);
     position: absolute;
@@ -111,6 +111,7 @@ svg, path:hover {
 }
 
 .move-top {
+    display: none;
     position: fixed;
     bottom: 125px;
     right: 100px;
@@ -186,7 +187,7 @@ a .box {
     top: 0; bottom: 0; right: 22px;
     border: 2px solid #E3E3E3; 
     border-radius: 36px;
-    transition: all 0.275s ease-in 0s; 
+    transition: all 0.35s ease; 
 }
 
 .onoffswitch-checkbox:checked + .onoffswitch-label {
@@ -212,13 +213,12 @@ a .box {
     padding-top: 6em;
 }
 
-
 .landing {
     gap: 10px;
 }
 
-.landing h2 {
-    font-size: 200px;
+.landing {
+    font-size: auto;
     font-weight:lighter;
 }
 
@@ -329,16 +329,19 @@ nav .hamburger {
 nav .hamburger .line {
     width: 100%;
     height: 3px;
-    background: var(--text-color);
+    background-color: var(--text-color) !important;
+    opacity: 1;
 }
 
 .hamburger .line-top {
-    background: var(--text-color);
+    opacity: 1;
+    background-color: var(--text-color) !important;
     height: 3.5px;
 }
 
 .hamburger .line-bottom {
-    background: var(--text-color);
+    opacity: 1;
+    background-color: var(--text-color) !important;
     height: 3.5px;
 }
 
@@ -450,6 +453,95 @@ button {
     transform-origin: left;
 }
 /*end hover*/
+
+/*
+.title-hover {
+    text-decoration: none;
+    position: relative;
+    color: var(--text-color);
+}
+
+.title-hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: right;
+    transform-origin: right;
+    transition: -webkit-transform 275ms ease-in;
+    transition: transform 275ms ease-in;
+    transition: transform 275ms ease-in, -webkit-transform 275ms ease-in;   
+}
+
+.title-hover:hover::after {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transform-origin: left;
+    transform-origin: left;
+}
+*/
+
+.link {
+    padding: .2em 0;
+    outline: none;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+}
+  
+.link--kukuri {
+    text-transform: uppercase;
+    font-weight: 900;
+    overflow: hidden;
+    line-height: 1;
+    color: var(--bg-gray);
+}
+  
+.link--kukuri:hover {
+    color: var(--hover-bi);
+}
+  
+.link--kukuri::after {
+    content: '';
+    position: absolute;
+    height: 16px;
+    width: 100%;
+    top: 50%;
+    margin-top: -8px;
+    right: 0;
+    background: var(--bg-graySuperLight);
+    transform: translate3d(-100%, 0, 0);
+    transition: transform 800ms ease-in-out;
+    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
+  
+.link--kukuri:hover::after {
+    transform: translate3d(100%, 0, 0);
+}
+  
+/*text sliding*/
+.link--kukuri::before {
+    content: attr(data-letters);
+    position: absolute;
+    z-index: 2;
+    overflow: hidden;
+    color: var(--txt-normal);
+    white-space: nowrap;
+    width: 0%;
+    transition: width 0.4s 0.3s;
+}
+  
+.link--kukuri:hover::before {
+    width: 100%;
+}
+
+
+
 
 .message p {
     padding-left: 50px;
@@ -590,7 +682,7 @@ footer .inner .social-media ion-icon:hover, footer .inner .social-media a > svg:
 
 @media only screen and (max-width: 1100px) {
     h1 {
-		font-size: 25vw;
+		font-size: 18vw;
 	}
 
 	h2 {
